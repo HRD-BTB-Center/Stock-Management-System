@@ -76,27 +76,6 @@ public class CheckInput{
 		
 		return false;
 	}
-	
-	public static void TelephoneNumber(String aString){
-        if(isPhoneNumber(aString)==true){
-            StringTokenizer tokens = new StringTokenizer("-");
-            int exchangeCode;
-			int number,areaCode;
-			if(tokens.countTokens()==3){
-                areaCode = Integer.parseInt(tokens.nextToken());
-                exchangeCode = Integer.parseInt(tokens.nextToken());
-                number = Integer.parseInt(tokens.nextToken());
-            }
-            else if(tokens.countTokens()==2){
-                exchangeCode = Integer.parseInt(tokens.nextToken());
-                number = Integer.parseInt(tokens.nextToken());
-            }
-            else{
-                //throw an excemption here
-            }
-        }
-
-    }
 
 	public static void main(String[] args) {
 		System.out.println("Please input: ");
