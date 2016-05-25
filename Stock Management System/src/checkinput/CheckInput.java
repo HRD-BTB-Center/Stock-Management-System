@@ -65,23 +65,24 @@ public class CheckInput{
 	}
 	
 	public static boolean isPhoneNumber(String phoneNumber){
-		String regex= "^[0-9]{10}$";
-		CharSequence inputString=phoneNumber;
-		Pattern pattern=Pattern.compile(regex);
-		Matcher match=pattern.matcher(inputString);
-		if(match.matches()){
-			System.out.println(phoneNumber.split("-"));
-			return true;
-		}
-		
-		return false;
+		String expression = "^[0-9]{9,10}$";
+        CharSequence inputStr = phoneNumber;
+        Pattern pattern = Pattern.compile(expression);
+        Matcher matcher = pattern.matcher(inputStr);
+        if(matcher.matches())
+        {
+        	System.out.println(String.valueOf(phoneNumber).replaceFirst("(\\d{3})(\\d{3})(\\d+)", "($1)-$2-$3"));
+             return true;
+        }
+        return false;
 	}
-
+	
 	public static void main(String[] args) {
-		System.out.println("Please input: ");
+		/*System.out.println("Please input: ");
 		Scanner in=new Scanner(System.in);
 		String n=in.nextLine();
-		System.out.println();
+		System.out.println();*/
+		
 	}
 
 }
